@@ -42,6 +42,9 @@
 *.VC.opendb
 *.log
 
+# Blender Files
+*.blend1
+
 # Precompiled Assets
 ProjectMelee/SourceArt/**/*.png
 ProjectMelee/SourceArt/**/*.tga
