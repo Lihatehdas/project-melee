@@ -1,0 +1,14 @@
+{
+	"configurations": [
+		{
+			"name": "ProjectMeleeEditor Editor Win64 Development (ProjectMelee)",
+			"intelliSenseMode": "msvc-x64",
+			"compileCommands": "G:\\GitHub\\project-melee\\ProjectMelee\\.vscode\\compileCommands_ProjectMelee.json"
+		},
+		{
+			"name": "Win32",
+			"intelliSenseMode": "msvc-x64",
+			"compileCommands": "G:\\GitHub\\project-melee\\ProjectMelee\\.vscode\\compileCommands_Default.json"
+		}
+	]
+}
