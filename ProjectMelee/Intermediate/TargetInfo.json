@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "ProjectMelee",
+			"Path": "G:\\GitHub\\project-melee\\ProjectMelee\\Source\\ProjectMelee.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "ProjectMeleeEditor",
+			"Path": "G:\\GitHub\\project-melee\\ProjectMelee\\Source\\ProjectMeleeEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

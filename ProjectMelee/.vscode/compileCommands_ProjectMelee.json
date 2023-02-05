@@ -1,0 +1,37 @@
+[
+	{
+		"file": "G:\\GitHub\\project-melee\\ProjectMelee\\Source\\ProjectMelee\\ProjectMelee.Build.cs",
+		"command": "\"F:\\Program Files\\Microsoft Visual Studio\\2022\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @G:\\GitHub\\project-melee\\ProjectMelee\\.vscode\\compileCommands_ProjectMelee\\ProjectMelee.211.rsp",
+		"directory": "G:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "G:\\GitHub\\project-melee\\ProjectMelee\\Source\\ProjectMelee\\ProjectMelee.cpp",
+		"command": "\"F:\\Program Files\\Microsoft Visual Studio\\2022\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @G:\\GitHub\\project-melee\\ProjectMelee\\.vscode\\compileCommands_ProjectMelee\\ProjectMelee.211.rsp",
+		"directory": "G:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "G:\\GitHub\\project-melee\\ProjectMelee\\Source\\ProjectMelee\\ProjectMelee.h",
+		"command": "\"F:\\Program Files\\Microsoft Visual Studio\\2022\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @G:\\GitHub\\project-melee\\ProjectMelee\\.vscode\\compileCommands_ProjectMelee\\ProjectMelee.211.rsp",
+		"directory": "G:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "G:\\GitHub\\project-melee\\ProjectMelee\\Source\\ProjectMelee\\ProjectMeleeCharacter.cpp",
+		"command": "\"F:\\Program Files\\Microsoft Visual Studio\\2022\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @G:\\GitHub\\project-melee\\ProjectMelee\\.vscode\\compileCommands_ProjectMelee\\ProjectMelee.211.rsp",
+		"directory": "G:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "G:\\GitHub\\project-melee\\ProjectMelee\\Source\\ProjectMelee\\ProjectMeleeCharacter.h",
+		"command": "\"F:\\Program Files\\Microsoft Visual Studio\\2022\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @G:\\GitHub\\project-melee\\ProjectMelee\\.vscode\\compileCommands_ProjectMelee\\ProjectMelee.211.rsp",
+		"directory": "G:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "G:\\GitHub\\project-melee\\ProjectMelee\\Source\\ProjectMelee\\ProjectMeleeGameMode.cpp",
+		"command": "\"F:\\Program Files\\Microsoft Visual Studio\\2022\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @G:\\GitHub\\project-melee\\ProjectMelee\\.vscode\\compileCommands_ProjectMelee\\ProjectMelee.211.rsp",
+		"directory": "G:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "G:\\GitHub\\project-melee\\ProjectMelee\\Source\\ProjectMelee\\ProjectMeleeGameMode.h",
+		"command": "\"F:\\Program Files\\Microsoft Visual Studio\\2022\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @G:\\GitHub\\project-melee\\ProjectMelee\\.vscode\\compileCommands_ProjectMelee\\ProjectMelee.211.rsp",
+		"directory": "G:\\UE_5.0\\Engine\\Source"
+	}
+]

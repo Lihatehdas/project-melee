@@ -1,0 +1,152 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch ProjectMelee (Debug)",
+			"request": "launch",
+			"program": "G:\\GitHub\\project-melee\\ProjectMelee\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+			"preLaunchTask": "ProjectMelee Win64 Debug Build",
+			"args": [
+			],
+			"cwd": "G:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "G:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "G:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch ProjectMelee (DebugGame)",
+			"request": "launch",
+			"program": "G:\\GitHub\\project-melee\\ProjectMelee\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+			"preLaunchTask": "ProjectMelee Win64 DebugGame Build",
+			"args": [
+			],
+			"cwd": "G:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "G:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "G:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch ProjectMelee (Development)",
+			"request": "launch",
+			"program": "G:\\GitHub\\project-melee\\ProjectMelee\\Binaries\\Win64\\UnrealGame.exe",
+			"preLaunchTask": "ProjectMelee Win64 Development Build",
+			"args": [
+			],
+			"cwd": "G:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "G:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "G:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch ProjectMelee (Test)",
+			"request": "launch",
+			"program": "G:\\GitHub\\project-melee\\ProjectMelee\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+			"preLaunchTask": "ProjectMelee Win64 Test Build",
+			"args": [
+			],
+			"cwd": "G:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "G:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "G:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch ProjectMelee (Shipping)",
+			"request": "launch",
+			"program": "G:\\GitHub\\project-melee\\ProjectMelee\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+			"preLaunchTask": "ProjectMelee Win64 Shipping Build",
+			"args": [
+			],
+			"cwd": "G:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "G:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "G:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch ProjectMeleeEditor (Debug)",
+			"request": "launch",
+			"program": "G:\\UE_5.0\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+			"preLaunchTask": "ProjectMeleeEditor Win64 Debug Build",
+			"args": [
+				"G:\\GitHub\\project-melee\\ProjectMelee\\ProjectMelee.uproject"
+			],
+			"cwd": "G:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "G:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "G:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch ProjectMeleeEditor (DebugGame)",
+			"request": "launch",
+			"program": "G:\\UE_5.0\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+			"preLaunchTask": "ProjectMeleeEditor Win64 DebugGame Build",
+			"args": [
+				"G:\\GitHub\\project-melee\\ProjectMelee\\ProjectMelee.uproject"
+			],
+			"cwd": "G:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "G:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "G:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch ProjectMeleeEditor (Development)",
+			"request": "launch",
+			"program": "G:\\UE_5.0\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+			"preLaunchTask": "ProjectMeleeEditor Win64 Development Build",
+			"args": [
+				"G:\\GitHub\\project-melee\\ProjectMelee\\ProjectMelee.uproject"
+			],
+			"cwd": "G:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "G:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "G:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Generate Project Files",
+			"type": "coreclr",
+			"request": "launch",
+			"program": "G:\\UE_5.0\\Engine\\Binaries\\DotNET\\UnrealBuildTool\\UnrealBuildTool",
+			"args": [
+				"-projectfiles",
+				"-vscode",
+				"-project=G:\\GitHub\\project-melee\\ProjectMelee\\ProjectMelee.uproject",
+				"-game",
+				"-engine"
+			],
+			"console": "externalTerminal",
+			"stopAtEntry": false,
+			"cwd": "G:\\UE_5.0"
+		}
+	]
+}
