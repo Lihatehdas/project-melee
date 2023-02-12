@@ -7,6 +7,8 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Misc/DateTime.h"
+#include "Misc/Timespan.h"
 
 //////////////////////////////////////////////////////////////////////////
 // AProjectMeleeCharacter
@@ -62,7 +64,7 @@ void AProjectMeleeCharacter::SetupPlayerInputComponent(class UInputComponent* Pl
 	// Set up gameplay key bindings
 	check(PlayerInputComponent);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
-	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &AProjectMeleeCharacter::StopJumping);
 
 	PlayerInputComponent->BindAxis("Move Forward / Backward", this, &AProjectMeleeCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("Move Right / Left", this, &AProjectMeleeCharacter::MoveRight);
@@ -102,6 +104,17 @@ void AProjectMeleeCharacter::LookUpAtRate(float Rate)
 	AddControllerPitchInput(Rate * TurnRateGamepad * GetWorld()->GetDeltaSeconds());
 }
 
+void AProjectMeleeCharacter::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+	CurrentTime = FDateTime::Now();
+}
+
+bool AProjectMeleeCharacter::IsIdling()
+{
+	return ((CurrentTime - LastInputTime).GetTotalSeconds() > TimeToTriggerIdleAnimation);
+}
+
 void AProjectMeleeCharacter::MoveForward(float Value)
 {
 	if ((Controller != nullptr) && (Value != 0.0f))
@@ -113,6 +126,8 @@ void AProjectMeleeCharacter::MoveForward(float Value)
 		// get forward vector
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
 		AddMovementInput(Direction, Value);
+
+		LastInputTime = FDateTime::Now();
 	}
 }
 
@@ -128,5 +143,14 @@ void AProjectMeleeCharacter::MoveRight(float Value)
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
+
+		LastInputTime = FDateTime::Now();
 	}
+}
+
+void AProjectMeleeCharacter::StopJumping()
+{
+	ACharacter::StopJumping();
+
+	LastInputTime = FDateTime::Now();
 }
