@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Misc/DateTime.h"
+
+
 #include "ProjectMeleeCharacter.generated.h"
 
 UCLASS(config=Game)
@@ -21,9 +24,16 @@ class AProjectMeleeCharacter : public ACharacter
 public:
 	AProjectMeleeCharacter();
 
+	UFUNCTION(BlueprintCallable, Category=Animation)
+	bool IsIdling();
+
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Input)
 	float TurnRateGamepad;
+	
+	// Time to trigger idle animation
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Animation)
+	double TimeToTriggerIdleAnimation = 5.0; 
 
 protected:
 
@@ -32,6 +42,9 @@ protected:
 
 	/** Called for side to side input */
 	void MoveRight(float Value);
+
+	// Called at the end of a jump
+	virtual void StopJumping() override;
 
 	/** 
 	 * Called via input to turn at a given rate. 
@@ -51,11 +64,15 @@ protected:
 	/** Handler for when a touch input stops. */
 	void TouchStopped(ETouchIndex::Type FingerIndex, FVector Location);
 
+	FDateTime CurrentTime; // Current time, updated every tick
+	FDateTime LastInputTime; // Set to FDateTime::Now() on input release
 
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
+
+	virtual void Tick(float DeltaSeconds) override;
 
 public:
 	/** Returns CameraBoom subobject **/
