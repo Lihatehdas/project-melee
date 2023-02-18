@@ -27,6 +27,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category=Animation)
 	bool IsIdling();
 
+	UFUNCTION(BlueprintCallable, Category=Character)
+	int GetHealth();
+	
+	UFUNCTION(BlueprintCallable, Category=Character)
+	void AdjustHealth(int addAmount);
+
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Input)
 	float TurnRateGamepad;
@@ -34,6 +40,10 @@ public:
 	// Time to trigger idle animation
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Animation)
 	double TimeToTriggerIdleAnimation = 5.0; 
+
+	// Max health character can have
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category=Character)
+	int MaxHealth = 100;
 
 protected:
 
@@ -66,13 +76,14 @@ protected:
 
 	FDateTime CurrentTime; // Current time, updated every tick
 	FDateTime LastInputTime; // Set to FDateTime::Now() on input release
+	virtual void Tick(float DeltaSeconds) override;
+
+	int CurrentHealth;
 
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
-
-	virtual void Tick(float DeltaSeconds) override;
 
 public:
 	/** Returns CameraBoom subobject **/
