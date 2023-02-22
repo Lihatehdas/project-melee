@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "ProjectMeleeCharacter.h"
 #include "Camera/CameraComponent.h"
@@ -51,8 +51,6 @@ AProjectMeleeCharacter::AProjectMeleeCharacter()
 
 	CurrentTime = FDateTime::Now();
 	LastInputTime = CurrentTime;
-
-	CurrentHealth = MaxHealth;
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
@@ -115,26 +113,6 @@ void AProjectMeleeCharacter::Tick(float DeltaSeconds)
 bool AProjectMeleeCharacter::IsIdling()
 {
 	return ((CurrentTime - LastInputTime).GetTotalSeconds() > TimeToTriggerIdleAnimation);
-}
-
-int AProjectMeleeCharacter::GetHealth()
-{
-	return CurrentHealth;
-}
-
-void AProjectMeleeCharacter::AdjustHealth(int addAmount)
-{
-	CurrentHealth += addAmount;
-
-	if (CurrentHealth > MaxHealth)
-	{
-		CurrentHealth = MaxHealth;
-	}
-	else if (CurrentHealth < 0)
-	{
-		CurrentHealth = 0;
-		// TODO: Trigger Death
-	}
 }
 
 void AProjectMeleeCharacter::MoveForward(float Value)
