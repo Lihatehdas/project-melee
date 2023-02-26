@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -66,13 +66,12 @@ protected:
 
 	FDateTime CurrentTime; // Current time, updated every tick
 	FDateTime LastInputTime; // Set to FDateTime::Now() on input release
+	virtual void Tick(float DeltaSeconds) override;
 
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
-
-	virtual void Tick(float DeltaSeconds) override;
 
 public:
 	/** Returns CameraBoom subobject **/
