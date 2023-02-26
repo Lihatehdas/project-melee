@@ -40,7 +40,7 @@ void UCP_HealthComponent::AdjustHealth(int addAmount)
 	{
 		CurrentHealth = MaxHealth;
 	}
-	else if (CurrentHealth < 0)
+	else if (CurrentHealth <= 0)
 	{
 		CurrentHealth = 0;
 		// TODO: Trigger Death
