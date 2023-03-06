@@ -10,7 +10,15 @@
 		}
 	],
 	"settings": {
-		"typescript.tsc.autoDetect": "off"
+		"typescript.tsc.autoDetect": "off",
+		"files.associations": {
+			"map": "cpp",
+			"queue": "cpp",
+			"xhash": "cpp",
+			"*.rh": "cpp",
+			"__config": "cpp",
+			"__nullptr": "cpp"
+		}
 	},
 	"extensions": {
 		"recommendations": [

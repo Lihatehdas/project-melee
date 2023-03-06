@@ -26,6 +26,12 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category=Character)
 	int GetHealth();
+
+	UFUNCTION(BlueprintCallable, Category=Character)
+	bool IsAlive();
+
+	UFUNCTION(BlueprintCallable, Category=Character)
+	void Die();
 	
 	UFUNCTION(BlueprintCallable, Category=Character)
 	void AdjustHealth(int addAmount);
@@ -34,6 +40,8 @@ protected:
 
 	// Called when the game starts
 	virtual void BeginPlay() override;
+
+	bool Died = false;
 
 public:	
 	//// Called every frame
