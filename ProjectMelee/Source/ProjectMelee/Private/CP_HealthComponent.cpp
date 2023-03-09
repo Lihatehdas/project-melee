@@ -2,6 +2,7 @@
 
 #include "CP_HealthComponent.h"
 #include "..\ProjectMeleeCharacter.h"
+#include "Components/CapsuleComponent.h"
 
 // Sets default values for this component's properties
 UCP_HealthComponent::UCP_HealthComponent()
@@ -46,38 +47,40 @@ void UCP_HealthComponent::Die()
 	if (pCharacter)
 	{
 		// Activate physics on the mesh of the actor
+		AProjectMeleeCharacter* pPlayer = static_cast<AProjectMeleeCharacter*>(pCharacter);
+		UCapsuleComponent* pCapsule = pCharacter->GetCapsuleComponent();
 		auto pMesh = pCharacter->GetMesh();
 		if (pMesh)
 		{
 			pMesh->bPauseAnims = true;
-			pMesh->SetSimulatePhysics(true);
+		}
+		if (pCapsule && !pCharacter->IsPlayerControlled())
+		{
+			pCapsule->SetSimulatePhysics(true);
 		}
 
 		// If player, disable input on controller
-		AProjectMeleeCharacter* pPlayer = static_cast<AProjectMeleeCharacter*>(pCharacter);
-		if (pPlayer)
+		if (pCharacter->IsPlayerControlled())
 		{
+			pMesh->SetSimulatePhysics(true);
+
 			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, TEXT("Player is dead"));
 			APlayerController* pPlayerController = GetWorld()->GetFirstPlayerController();
 			pPlayer->DisableInput(pPlayerController);
 		}
+		else // Is an enemy 
+		{
+			// TODO: Disable enemy AI
 
-		// TODO: If enemy, disable AI
-		// TODO: If enemy, add to global ragdoll counter. If maximum is hit, delete the oldest enemy from scene.
-		//auto controller = GetController();
-		//if (controller == GetPlayerController(0))
-		//{
-		//	GetPlayerController().DisableInput();
-		//}
-		//else 
-		//{
-		//	Global.Ragdolls.emplace(this.RagdollHandle);
-		//	if (Globals.Ragdolls.size() > Globals.RagdollMax)
-		//	{
-		//		auto removeRagdoll = Globals.Ragdolls.pop();
-		//		DeleteObjectFromScene(removeRagdoll);
-		//	}
-		//}
+
+			// TODO: Add to global ragdoll counter. If maximum is hit, delete the oldest enemy from scene.
+			//	Global.Ragdolls.emplace(this.RagdollHandle);
+			//	if (Globals.Ragdolls.size() > Globals.RagdollMax)
+			//	{
+			//		auto removeRagdoll = Globals.Ragdolls.pop();
+			//		DeleteObjectFromScene(removeRagdoll);
+			//	}
+		}
 	}
 }
 

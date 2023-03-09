@@ -15,7 +15,7 @@ class PROJECTMELEE_API UCP_HealthComponent : public UActorComponent
 public:	
 
 	// Max health character can have
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category=Character)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Character)
 	int MaxHealth = 100;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Character)
