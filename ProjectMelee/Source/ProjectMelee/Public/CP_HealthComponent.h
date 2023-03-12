@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Lihatehdas 2023
 
 #pragma once
 
@@ -15,7 +15,7 @@ class PROJECTMELEE_API UCP_HealthComponent : public UActorComponent
 public:	
 
 	// Max health character can have
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category=Character)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Character)
 	int MaxHealth = 100;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Character)
@@ -26,6 +26,12 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category=Character)
 	int GetHealth();
+
+	UFUNCTION(BlueprintCallable, Category=Character)
+	bool IsAlive();
+
+	UFUNCTION(BlueprintCallable, Category=Character)
+	void Die();
 	
 	UFUNCTION(BlueprintCallable, Category=Character)
 	void AdjustHealth(int addAmount);
@@ -34,6 +40,8 @@ protected:
 
 	// Called when the game starts
 	virtual void BeginPlay() override;
+
+	bool Died = false;
 
 public:	
 	//// Called every frame
