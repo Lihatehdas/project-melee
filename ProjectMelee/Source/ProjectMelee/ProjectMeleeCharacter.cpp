@@ -9,6 +9,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Misc/DateTime.h"
 #include "Misc/Timespan.h"
+#include "Public/CP_Weapon.h"
 
 //////////////////////////////////////////////////////////////////////////
 // AProjectMeleeCharacter
@@ -51,6 +52,12 @@ AProjectMeleeCharacter::AProjectMeleeCharacter()
 
 	CurrentTime = FDateTime::Now();
 	LastInputTime = CurrentTime;
+
+	auto pWeapon = FindComponentByClass<UCP_Weapon>();
+	if (pWeapon)
+	{
+		pWeapon->SetWeapon(EWeapon::Fists);
+	}
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
