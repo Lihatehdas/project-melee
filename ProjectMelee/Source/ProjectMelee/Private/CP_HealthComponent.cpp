@@ -36,7 +36,7 @@ int UCP_HealthComponent::GetHealth()
 
 bool UCP_HealthComponent::IsAlive()
 {
-	return CurrentHealth > 0;
+	return !Died;
 }
 
 void UCP_HealthComponent::Die()
@@ -57,6 +57,7 @@ void UCP_HealthComponent::Die()
 		if (pCapsule && !pCharacter->IsPlayerControlled())
 		{
 			pCapsule->SetSimulatePhysics(true);
+			pMesh->SetSimulatePhysics(true);
 		}
 
 		// If player, disable input on controller
