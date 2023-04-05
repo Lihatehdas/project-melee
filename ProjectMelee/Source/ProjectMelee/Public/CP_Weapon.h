@@ -12,7 +12,8 @@ enum EWeapon {
     Shovel,
     Club,
     Sword,
-	Bow
+	Bow,
+	Crossbow
 };
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
