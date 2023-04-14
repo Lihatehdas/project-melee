@@ -50,7 +50,7 @@ FVector UCP_SmartLinkCalc::CalculateLaunchVelocity(FVector DestinationVector, fl
 		x = scale * (DestinationVector.X - InitialVector.X);
 		y = scale * (DestinationVector.Y - InitialVector.Y);
 		z = scale * (DestinationVector.Z - (InitialVector.Z - ((0.5*Duration*Duration*gravity))));
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("x = %f, y = %f, z = %f"), x, y, z));
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("x = %f, y = %f, z = %f"), x, y, z));
 	}
 
 	return FVector(x,y,z);
