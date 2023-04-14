@@ -48,32 +48,22 @@ void UCP_HealthComponent::Die()
 	{
 		// Activate physics on the mesh of the actor
 		AProjectMeleeCharacter* pPlayer = static_cast<AProjectMeleeCharacter*>(pCharacter);
-		UCapsuleComponent* pCapsule = pCharacter->GetCapsuleComponent();
 		auto pMesh = pCharacter->GetMesh();
 		if (pMesh)
 		{
 			pMesh->bPauseAnims = true;
-		}
-		if (pCapsule && !pCharacter->IsPlayerControlled())
-		{
-			pCapsule->SetSimulatePhysics(true);
 			pMesh->SetSimulatePhysics(true);
 		}
 
 		// If player, disable input on controller
 		if (pCharacter->IsPlayerControlled())
 		{
-			pMesh->SetSimulatePhysics(true);
-
 			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, TEXT("Player is dead"));
 			APlayerController* pPlayerController = GetWorld()->GetFirstPlayerController();
 			pPlayer->DisableInput(pPlayerController);
 		}
 		else // Is an enemy 
 		{
-			// TODO: Disable enemy AI
-
-
 			// TODO: Add to global ragdoll counter. If maximum is hit, delete the oldest enemy from scene.
 			//	Global.Ragdolls.emplace(this.RagdollHandle);
 			//	if (Globals.Ragdolls.size() > Globals.RagdollMax)

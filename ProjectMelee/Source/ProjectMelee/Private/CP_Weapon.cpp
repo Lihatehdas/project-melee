@@ -40,6 +40,12 @@ void UCP_Weapon::SetWeapon(EWeapon weapon)
 			weaponRange = 480;
 			pWeaponMesh = nullptr; // TODO
 			break;
+		case EWeapon::Crossbow:
+			weaponName = "Crossbow";
+			weaponDamage = 5;
+			weaponRange = 480;
+			pWeaponMesh = nullptr; // TODO
+			break;
 		case EWeapon::Fists:
 		default:
 			weaponName = "Fists";
